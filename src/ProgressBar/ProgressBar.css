@@ -1,0 +1,30 @@
+.progressBar{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:10px;
+}
+
+.progress{
+    width:500px;
+    height:20px;
+    border:1px solid black;
+    border-radius: 25px;
+    background-color: rgb(233,236,239);
+    overflow: hidden;
+}
+
+.progress span{
+    width:30%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.progress div{
+    height:20px;
+    background-color: green;
+}
