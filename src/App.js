@@ -11,6 +11,7 @@ import "./App.css";
 // import ItemList from './Item';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { lazy, Suspense } from "react";
+import StopWatch from "./Stopwatch/Stopwatch";
 
 function App() {
   // const [Query,setQuery]=useState("")
@@ -31,6 +32,8 @@ function App() {
   const ProgressBar=lazy(()=>import('./ProgressBar/ProgressBar'));
   const Pagination=lazy(()=>import('./Pagination/Pagination'))
   const Form =lazy(()=>import('./From/From'))
+  const CountDown =lazy(()=>import('./Date/Date'))
+  const Stopwatch =lazy(()=>import('./Stopwatch/Stopwatch'))
   return (
     <div className="App">
       <BrowserRouter>
@@ -83,6 +86,23 @@ function App() {
               </Suspense>
             }
           />
+          <Route
+            path="date"
+            element={
+              <Suspense>
+                <CountDown/>
+              </Suspense>
+            }
+          />
+        <Route
+            path="countStop"
+            element={
+              <Suspense>
+                <Stopwatch/>
+              </Suspense>
+            }
+          />
+          
         </Routes>
       </BrowserRouter>
 
