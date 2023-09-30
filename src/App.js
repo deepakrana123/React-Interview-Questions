@@ -11,8 +11,6 @@ import "./App.css";
 // import ItemList from './Item';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { lazy, Suspense } from "react";
-import StopWatch from "./Stopwatch/Stopwatch";
-
 function App() {
   // const [Query,setQuery]=useState("")
   // const transformData=(data)=>data.results
@@ -26,14 +24,17 @@ function App() {
 
   // }
 
-  const TicTacToe=lazy(()=>import('./TicTacToe/TicTacToe'))
-  const Password=lazy(()=>import('./Password/Password'))
-  const Time=lazy(()=>import('./Time/Time'))
+  const TicTacToe=lazy(()=>import('./TicTacToe/TicTacToe'));
+  const Password=lazy(()=>import('./Password/Password'));
+  const Time=lazy(()=>import('./Time/Time'));
   const ProgressBar=lazy(()=>import('./ProgressBar/ProgressBar'));
-  const Pagination=lazy(()=>import('./Pagination/Pagination'))
-  const Form =lazy(()=>import('./From/From'))
-  const CountDown =lazy(()=>import('./Date/Date'))
-  const Stopwatch =lazy(()=>import('./Stopwatch/Stopwatch'))
+  const Pagination=lazy(()=>import('./Pagination/Pagination'));
+  const Form =lazy(()=>import('./From/From'));
+  const Date =lazy(()=>import('./Date/Date'));
+  const Stopwatch =lazy(()=>import('./Stopwatch/Stopwatch'));
+  const CountDown =lazy(()=>import('./CountDown/CountDown'));
+  const ReactHooks=lazy(()=>import('./ReactHooks/ReactHooks'));
+  const InfiniteScroll=lazy(()=>import('./InfiniteScroll/InfiniteScroll'))
   return (
     <div className="App">
       <BrowserRouter>
@@ -51,6 +52,14 @@ function App() {
             element={
               <Suspense>
                 <Password />
+              </Suspense>
+            }
+          />
+           <Route
+            path="infiniteScroll"
+            element={
+              <Suspense>
+                <InfiniteScroll />
               </Suspense>
             }
           />
@@ -90,7 +99,7 @@ function App() {
             path="date"
             element={
               <Suspense>
-                <CountDown/>
+                <Date/>
               </Suspense>
             }
           />
@@ -102,7 +111,22 @@ function App() {
               </Suspense>
             }
           />
-          
+           <Route
+            path="countDown"
+            element={
+              <Suspense>
+                <CountDown/>
+              </Suspense>
+            }
+          />
+            <Route
+            path="reactHooks"
+            element={
+              <Suspense>
+                <ReactHooks/>
+              </Suspense>
+            }
+          />
         </Routes>
       </BrowserRouter>
 

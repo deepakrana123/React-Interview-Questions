@@ -10,7 +10,6 @@ const EmiCalculator = () => {
     const [emi , setEmi]=useState(0)
     const updateEmi=(e)=>{
         if(!cost) return
-
         const dp=Number(e.target.value)
         setDownPayment(dp.toFixed(0))
         const emi=calulateEmi(dp)
@@ -30,13 +29,10 @@ const EmiCalculator = () => {
     const EMI =
       (loanAmt * rateOfInterest * (1 + rateOfInterest) ** numOfYears) /
       ((1 + rateOfInterest) ** numOfYears - 1);
-
-    return Number(EMI / 12).toFixed(0);
-        
+    return Number(EMI / 12).toFixed(0);    
     }
     const updateDownPayment=(e)=>{
         if(!cost) return
-
       const emi=Number(e.target.value)
       setEmi(emi.toFixed(0))
       const dp =  calulateDownPayment(e.target.value)

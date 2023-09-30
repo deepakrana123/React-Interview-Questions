@@ -13,8 +13,8 @@ const TicTacToe = () => {
         prevState[index]=isTurnX?'X':'0';
         setState(prevState)
         setIsTrunX(!isTurnX)
-        
     }
+    
     const checkWinner=()=>{
         const winnerLogic = [
             [0, 1, 2],

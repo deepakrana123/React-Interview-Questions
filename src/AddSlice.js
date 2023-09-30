@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import {dataTodo} from "./data"
+import {dataTodo} from "./Todo/data"
 
 export const addTodoSlice=createSlice({
     name:'todo',
@@ -11,13 +11,11 @@ export const addTodoSlice=createSlice({
     reducers:{
         addTodo:{
             reducer(state , {payload}){
-                console.log(payload)
                 state.todo.todos=[...state.todo.todos,payload]
             }
         },
         removeTodo:{
             reducer(state,{payload}){
-                console.log(payload,"remove")
                 state.todo.todos = state.todo.todos.filter(item=>item.id!==payload)
             }
         },

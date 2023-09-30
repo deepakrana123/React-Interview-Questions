@@ -1,15 +1,12 @@
 import React,{useState,useEffect} from 'react'
-
 const Progress = ({value,onCompleted}) => {
     const [progress,setProgress]=useState(value)
     useEffect(()=>{
         setProgress(Math.min(100,Math.max(value,0)))
         if(value===100){
-            console.log(value,"value")
             onCompleted();
         }
     },[value,onCompleted])
-
   return (
     <>
     <div className='progress'>
