@@ -24,17 +24,18 @@ function App() {
 
   // }
 
-  const TicTacToe=lazy(()=>import('./TicTacToe/TicTacToe'));
-  const Password=lazy(()=>import('./Password/Password'));
-  const Time=lazy(()=>import('./Time/Time'));
-  const ProgressBar=lazy(()=>import('./ProgressBar/ProgressBar'));
-  const Pagination=lazy(()=>import('./Pagination/Pagination'));
-  const Form =lazy(()=>import('./From/From'));
-  const Date =lazy(()=>import('./Date/Date'));
-  const Stopwatch =lazy(()=>import('./Stopwatch/Stopwatch'));
-  const CountDown =lazy(()=>import('./CountDown/CountDown'));
-  const ReactHooks=lazy(()=>import('./ReactHooks/ReactHooks'));
-  const InfiniteScroll=lazy(()=>import('./InfiniteScroll/InfiniteScroll'))
+  const TicTacToe = lazy(() => import("./TicTacToe/TicTacToe"));
+  const Password = lazy(() => import("./Password/Password"));
+  const Time = lazy(() => import("./Time/Time"));
+  const ProgressBar = lazy(() => import("./ProgressBar/ProgressBar"));
+  const Pagination = lazy(() => import("./Pagination/Pagination"));
+  const Form = lazy(() => import("./From/From"));
+  const Date = lazy(() => import("./Date/Date"));
+  const Stopwatch = lazy(() => import("./Stopwatch/Stopwatch"));
+  const CountDown = lazy(() => import("./CountDown/CountDown"));
+  const ReactHooks = lazy(() => import("./ReactHooks/ReactHooks"));
+  const InfiniteScroll = lazy(() => import("./InfiniteScroll/InfiniteScroll"));
+  const ConstructorPattern = lazy(() => import("./ConstructorPattern/constructorPattern"));
   return (
     <div className="App">
       <BrowserRouter>
@@ -55,7 +56,7 @@ function App() {
               </Suspense>
             }
           />
-           <Route
+          <Route
             path="infiniteScroll"
             element={
               <Suspense>
@@ -63,7 +64,7 @@ function App() {
               </Suspense>
             }
           />
-             <Route
+          <Route
             path="time"
             element={
               <Suspense>
@@ -71,7 +72,7 @@ function App() {
               </Suspense>
             }
           />
-             <Route
+          <Route
             path="progressBar"
             element={
               <Suspense>
@@ -79,19 +80,19 @@ function App() {
               </Suspense>
             }
           />
-            <Route
+          <Route
             path="pagination"
             element={
               <Suspense>
-                <Pagination/>
+                <Pagination />
               </Suspense>
             }
           />
-            <Route
+          <Route
             path="form"
             element={
               <Suspense>
-                <Form/>
+                <Form />
               </Suspense>
             }
           />
@@ -99,31 +100,39 @@ function App() {
             path="date"
             element={
               <Suspense>
-                <Date/>
+                <Date />
               </Suspense>
             }
           />
-        <Route
+          <Route
             path="countStop"
             element={
               <Suspense>
-                <Stopwatch/>
+                <Stopwatch />
               </Suspense>
             }
           />
-           <Route
+          <Route
             path="countDown"
             element={
               <Suspense>
-                <CountDown/>
+                <CountDown />
               </Suspense>
             }
           />
-            <Route
+          <Route
             path="reactHooks"
             element={
               <Suspense>
-                <ReactHooks/>
+                <ReactHooks />
+              </Suspense>
+            }
+          />
+          <Route
+            path="contructor"
+            element={
+              <Suspense>
+                <ConstructorPattern />
               </Suspense>
             }
           />
